@@ -1,5 +1,6 @@
 <h1>TensorFlow</h1>
 <h2>Install:</h2>
+
 Reference: https://www.tensorflow.org/install/
 
 ```bash
@@ -12,6 +13,7 @@ pip install ipython numpy
 ```
 
 <h2>Validate:</h2>
+
 Reference: https://www.tensorflow.org/install/install_mac#ValidateYourInstallation
 
 (in python)
@@ -32,6 +34,7 @@ open http://localhost:6006
 
 <h1>Keras</h1>
 <h2>Install:</h2>
+
 Reference: https://keras.io/#installation
 
 ```bash
