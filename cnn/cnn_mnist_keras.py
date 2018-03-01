@@ -1,8 +1,7 @@
-"""Keras MNIST Classifier: https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py"""
+"""Keras MNIST Autoencode: https://blog.keras.io/building-autoencoders-in-keras.html"""
 
 from keras.models import Sequential
-from keras.layers import Conv2D, MaxPooling2D, Dense, Dropout, Flatten, Reshape
-from keras.optimizers import SGD
+from keras.layers import Conv2D, MaxPooling2D, Dense, Reshape, Upsampling2D
 from keras.metrics import sparse_categorical_accuracy
 from keras.callbacks import TensorBoard
 from time import time
@@ -24,15 +23,9 @@ if __name__ == '__main__':
     # build model
     model = Sequential()
     model.add(Reshape((IMAGE_WIDTH, IMAGE_HEIGHT, CHANNELS), input_shape=(IMAGE_WIDTH * IMAGE_HEIGHT * CHANNELS,)))
-    model.add(Conv2D(filters=32, 
-                     kernel_size=(5, 5), 
-                     activation='relu', 
-                     input_shape=(IMAGE_WIDTH, IMAGE_HEIGHT, CHANNELS)))
-    model.add(MaxPooling2D(pool_size=(2, 2), strides=2))
-    model.add(Conv2D(filters=64, 
-                     kernel_size=(5, 5), 
-                     activation='relu', 
-                     input_shape=(14, 14, 32)))
+    model.add(Conv2D(filters=16, kernel_size=3, activation='relu', padding='same'))
+    model.add(MaxPooling2D(pool_size=2))
+    model.add(Conv2D(filters=8, kernel_size=3, activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2), strides=2))
     model.add(Flatten())
     model.add(Dense(units=1024, activation='relu'))
