@@ -1,7 +1,13 @@
+<h1>Prerequisites</h1>
+
+https://virtualenv.pypa.io/en/stable/installation/
+http://virtualenvwrapper.readthedocs.io/en/latest/install.html
+
 <h1>TensorFlow</h1>
 <h2>Install:</h2>
 
 Reference: https://www.tensorflow.org/install/
+Or use pre-built binary: https://github.com/lakshayg/tensorflow-build
 
 ```bash
 brew upgrade python3
